@@ -45,6 +45,11 @@ export default function Card() {
 
   return (
     <div className="container py-4">
+      <div className="container">
+        <div className="row mx-auto">
+          <h1>Peliculas 🎬</h1>
+        </div>
+      </div>
       <div className="row">{movieList}</div>
     </div>
   );

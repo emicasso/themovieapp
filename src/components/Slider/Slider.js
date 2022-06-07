@@ -8,20 +8,21 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Slider() {
   const { nowPlaying } = useSlider();
   return (
-    <section className="py-5">
+    <section className="pb-5">
       <Carousel
+        autoPlay={true}
         infiniteLoop
         showStatus={false}
         showIndicators={false}
         showThumbs={false}
-        interval={5000}
+        interval={3000}
       >
         {nowPlaying.slice(0, 8).map((item, i) => (
           <div key={i}>
             <img
               src={`${POSTER_URL}${item.backdrop_path}`}
               className="img-fluid img-transform"
-              style={{ height: 750 }}
+              style={{ height: 650 }}
               alt={item.title}
             />
             <div className="legend d-md-block bgcaption text-start px-2">

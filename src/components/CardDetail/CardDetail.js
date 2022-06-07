@@ -3,13 +3,20 @@ import "../../sass/detail.sass";
 import StarRatings from "react-star-ratings";
 import { POSTER_URL } from "../../services/api";
 import { useMovieDetail } from "../../hooks/useMovieDetail";
+import { useNavigate } from "react-router";
 
 export default function CardDetail() {
   const { movieDetail } = useMovieDetail();
+  const navigate = useNavigate();
+
+  function handleOnClick(e) {
+    e.preventDefault();
+    navigate("/");
+  }
 
   return (
     <div className="container">
-      <div className="row py-5 justify-content-center">
+      <div className="row py-2 justify-content-center">
         <div className="_card py-2">
           <div className="_card-thumbnail">
             {movieDetail.poster_path ? (
@@ -40,6 +47,16 @@ export default function CardDetail() {
             </div>
             <span>Estrenada: {movieDetail.release_date}</span>
             <p className="_card-description">{movieDetail.overview}</p>
+            <div className="d-flex">
+              <div className="py-2 justify-content-center align-items-center">
+                <button
+                  className="btn btn-outline-light rounded-pill"
+                  onClick={handleOnClick}
+                >
+                  Volver al Inicio
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
