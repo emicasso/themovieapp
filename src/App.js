@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { createContext } from "react";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Hero, Navbar } from "./components";
+import { Navbar } from "./components";
+import { Credits, Home } from "./pages";
 import { API_KEY, API_URL } from "./services/api";
 
 export const AppContext = createContext();
@@ -46,7 +47,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/movies/:id" element={<Credits />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>
