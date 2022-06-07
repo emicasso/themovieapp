@@ -19,7 +19,7 @@ export function useMovieDetail() {
           },
         });
         setMovieDetail(data);
-      } catch {}
+      } catch(error) {}
     },
     [params.id]
   );

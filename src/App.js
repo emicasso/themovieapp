@@ -4,6 +4,7 @@ import { createContext } from "react";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
+import ScrollToTop from "./components/ScrollToTop";
 import { Credits, Home } from "./pages";
 import { API_KEY, API_URL } from "./services/api";
 
@@ -45,6 +46,7 @@ function App() {
       }}
     >
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
