@@ -13,7 +13,6 @@ export default function Slider() {
         autoPlay={true}
         infiniteLoop
         showStatus={false}
-        showIndicators={false}
         showThumbs={false}
         interval={3000}
       >
