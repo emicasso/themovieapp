@@ -1,10 +1,12 @@
 import React from "react";
 import TMDB from "./TMDB.svg";
 import "../../sass/navbar.sass";
-import { useListMovie } from "../../hooks/useListMovie";
+// import { useListMovie } from "../../hooks/useListMovie";
+import { useContext } from "react";
+import { AppContext } from "../../App";
 
 export default function Navbar() {
-  const {searchMovie, setSearchMovie, fetchMovies} = useListMovie()
+  const {searchMovie, setSearchMovie, fetchMovies} = useContext(AppContext)
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
