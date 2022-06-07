@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { createContext } from "react";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import ScrollToTop from "./components/ScrollToTop";
 import { Credits, Home } from "./pages";
 import { API_KEY, API_URL } from "./services/api";
@@ -52,6 +52,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/movies/:id" element={<Credits />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </AppContext.Provider>
   );
