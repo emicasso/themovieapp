@@ -21,7 +21,6 @@ export default function Slider() {
             <img
               src={`${POSTER_URL}${item.backdrop_path}`}
               className="img-fluid img-transform"
-              style={{ height: 650 }}
               alt={item.title}
             />
             <div className="legend d-md-block bgcaption text-start px-2">

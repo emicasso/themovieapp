@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useCallback } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
 import { useState } from "react";
@@ -16,7 +17,7 @@ function App() {
   const [totalPage, setTotalPage] = useState(1);
   const [searchMovie, setSearchMovie] = useState("");
 
-  const fetchMovies = async (searchMovie, page) => {
+  const fetchMovies = useCallback(async (searchMovie) => {
     const type = searchMovie ? "search/movie" : "discover/movie";
     try {
       const {
@@ -32,11 +33,11 @@ function App() {
       setMovies(results);
       setTotalPage(total_pages)
     } catch (error) {}
-  };
+  },[page])
 
   useEffect(() => {
     fetchMovies();
-  }, [page]);
+  }, [fetchMovies]);
 
   function backPage() {
     if(page > 1){

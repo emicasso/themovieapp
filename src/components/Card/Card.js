@@ -67,7 +67,7 @@ export default function Card() {
           {page !== 1 ? (
             <button
               onClick={backPage}
-              className="btn btn-outline-dark btn-lg mx-2"
+              className="btn btn-outline-dark rounded-pill mx-2"
             >
               Prev
             </button>
@@ -78,7 +78,7 @@ export default function Card() {
           {page + 1 === totalPage ? null : (
             <button
               onClick={nextPage}
-              className="btn btn-outline-dark btn-lg mx-2"
+              className="btn btn-outline-dark rounded-pill mx-2"
             >
               Next
             </button>
