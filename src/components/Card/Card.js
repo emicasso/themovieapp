@@ -4,6 +4,8 @@ import "../../sass/styles.sass";
 import { useContext } from "react";
 import { AppContext } from "../../App";
 import { Link } from "react-router-dom";
+import StarRatings from "react-star-ratings";
+
 
 export default function Card() {
   const { movies } = useContext(AppContext);
@@ -28,9 +30,17 @@ export default function Card() {
                 <div className="card-img-overlay text-white">
                   <h4 className="card-title">{items.title}</h4>
                   <small></small>
-                  <small className="card-text">
-                    Raiting: {items.vote_average}
-                  </small>
+                  <span className="stars">
+                    <StarRatings
+                      rating={items.vote_average}
+                      starRatedColor="yellow"
+                      numberOfStars={10}
+                      name="rating"
+                      starDimension="20px"
+                      starSpacing="4px"
+                    />
+                    <span> {items.vote_average}</span>
+                  </span>
                   <small className="card-text">
                     Estrenado: {items.release_date}
                   </small>
