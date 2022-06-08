@@ -1,17 +1,18 @@
 import React from "react";
-import { POSTER_URL } from "../../services/api";
 import "../../sass/styles.sass";
 import { useContext } from "react";
 import { AppContext } from "../../App";
 import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
-
+import { POSTER_URL } from "../../services/api";
 
 export default function Card() {
-  const { movies } = useContext(AppContext);
+  const { movies, backPage, nextPage, page, totalPage } =
+    useContext(AppContext);
+
   const movieList = movies.slice(0, 16).map((items, index) => {
     return (
-      <div className="col-sm-12 col-xl-3 col-lg-4 col-md-6 d-flex" key={index}>
+      <div className="col-sm-12 col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center" key={index}>
         <div className="cards">
           <Link to={`/movies/${items.id}`}>
             <div className="flip-card">
@@ -24,7 +25,7 @@ export default function Card() {
                       className="flip-card-front"
                     />
                   ) : (
-                    <div className="movie-placeholder">No Image found</div>
+                    <div className="_movie-placeholder">No Image found</div>
                   )}
                 </div>
                 <div className="card-img-overlay text-white">
@@ -61,6 +62,29 @@ export default function Card() {
         </div>
       </div>
       <div className="row">{movieList}</div>
+      <div className="row text-center pt-5">
+        <div className="container">
+          {page !== 1 ? (
+            <button
+              onClick={backPage}
+              className="btn btn-outline-dark btn-lg mx-2"
+            >
+              Prev
+            </button>
+          ) : null}
+          <span>
+            Pagina {page} de {totalPage}
+          </span>
+          {page + 1 === totalPage ? null : (
+            <button
+              onClick={nextPage}
+              className="btn btn-outline-dark btn-lg mx-2"
+            >
+              Next
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

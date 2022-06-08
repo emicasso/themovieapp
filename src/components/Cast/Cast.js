@@ -1,11 +1,10 @@
 import React from "react";
-import { useCredits } from "../../hooks/useCredits";
-import { POSTER_URL } from "../../services/api";
 import "../../sass/cast.sass";
+import { POSTER_URL } from "../../services/api";
+import { useCredits } from "../../hooks/useCredits";
 
 export default function Cast() {
   const { cast } = useCredits();
-  console.log(cast);
 
   const castList = cast.slice(0, 16).map((items, i) => {
     return (
