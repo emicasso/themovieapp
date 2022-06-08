@@ -16,7 +16,7 @@ function App() {
   const [totalPage, setTotalPage] = useState(1);
   const [searchMovie, setSearchMovie] = useState("");
 
-  const fetchMovies = async (searchMovie) => {
+  const fetchMovies = async (searchMovie, page) => {
     const type = searchMovie ? "search/movie" : "discover/movie";
     try {
       const {
