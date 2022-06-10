@@ -22,7 +22,7 @@ git clone https://github.com/emicasso/themovieapp
 2. Change the working directory
 
 ```bash
-cd sCalculator
+cd themovieapp
 ```
 
 3. Execute:
