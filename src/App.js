@@ -16,37 +16,45 @@ function App() {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [searchMovie, setSearchMovie] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const fetchMovies = useCallback(async (searchMovie) => {
-    const type = searchMovie ? "search/movie" : "discover/movie";
-    try {
-      const {
-        data: { results, total_pages },
-      } = await axios.get(`${API_URL}/${type}`, {
-        params: {
-          api_key: API_KEY,
-          language: "es",
-          page: page,
-          query: searchMovie,
-        },
-      });
-      setMovies(results);
-      setTotalPage(total_pages)
-    } catch (error) {}
-  },[page])
+  const fetchMovies = useCallback(
+    async (searchMovie) => {
+      const type = searchMovie ? "search/movie" : "discover/movie";
+      try {
+        setLoading(true);
+        const {
+          data: { results, total_pages },
+        } = await axios.get(`${API_URL}/${type}`, {
+          params: {
+            api_key: API_KEY,
+            language: "es",
+            page: page,
+            query: searchMovie,
+          },
+        });
+        setMovies(results);
+        setLoading(false);
+        setTotalPage(total_pages);
+      } catch (error) {
+        setLoading(false);
+      }
+    },
+    [page]
+  );
 
   useEffect(() => {
     fetchMovies();
   }, [fetchMovies]);
 
   function backPage() {
-    if(page > 1){
+    if (page > 1) {
       setPage((page) => page - 1);
     }
   }
 
   function nextPage() {
-    if(page + 1 !== totalPage){
+    if (page + 1 !== totalPage) {
       setPage((page) => page + 1);
     }
   }
@@ -62,7 +70,9 @@ function App() {
         backPage,
         nextPage,
         page,
-        totalPage
+        totalPage,
+        loading,
+        setLoading,
       }}
     >
       <BrowserRouter>

@@ -1,5 +1,5 @@
 import React from "react";
-import '../../sass/carousel.sass'
+import "../../sass/carousel.sass";
 import { POSTER_URL } from "../../services/api";
 import { useSlider } from "../../hooks/useSlider";
 import { Carousel } from "react-responsive-carousel";
@@ -23,11 +23,14 @@ export default function Slider() {
               className="img-fluid img-transform"
               alt={item.title}
             />
-            <div className="legend d-md-block bgcaption text-start px-2">
-              <h1 className="text-center">{item.title}</h1>
-              <h6>
-                <em>{item.overview}</em>
-              </h6>
+            <div className="legend d-md-block text-start px-2">
+              <div className="hero-content max-center">
+                <button className={"button btn-warning"}>Play Trailer</button>
+                <h1 className={"hero-title"}>{item.title}</h1>
+                {item.overview ? (
+                  <h6 className={"hero-overview"}>{item.overview}</h6>
+                ) : null}
+              </div>
             </div>
           </div>
         ))}

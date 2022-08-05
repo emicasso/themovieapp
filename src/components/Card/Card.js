@@ -5,14 +5,18 @@ import { AppContext } from "../../App";
 import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { POSTER_URL } from "../../services/api";
+import { Loading } from "../../components";
 
 export default function Card() {
-  const { movies, backPage, nextPage, page, totalPage } =
+  const { movies, backPage, nextPage, page, totalPage, loading } =
     useContext(AppContext);
 
-  const movieList = movies.slice(0, 16).map((items, index) => {
+  const movieList = movies.slice(0, 20).map((items, index) => {
     return (
-      <div className="col-sm-12 col-xl-3 col-lg-4 col-md-6 d-flex justify-content-center" key={index}>
+      <div
+        className="col-sm-12 col-xl-3 col-lg-6 col-md-6 d-flex justify-content-center"
+        key={index}
+      >
         <div className="cards">
           <Link to={`/movies/${items.id}`}>
             <div className="flip-card">
@@ -54,6 +58,13 @@ export default function Card() {
     );
   });
 
+  if (loading) {
+    return (
+      <div className="row">
+        <Loading />
+      </div>
+    );
+  }
   return (
     <div className="container py-4">
       <div className="container">
@@ -67,7 +78,7 @@ export default function Card() {
           {page !== 1 ? (
             <button
               onClick={backPage}
-              className="btn btn-outline-dark rounded-pill mx-2"
+              className="btn btn-outline-warning rounded-pill mx-2"
             >
               Prev
             </button>
@@ -78,7 +89,7 @@ export default function Card() {
           {page + 1 === totalPage ? null : (
             <button
               onClick={nextPage}
-              className="btn btn-outline-dark rounded-pill mx-2"
+              className="btn btn-outline-warning rounded-pill mx-2"
             >
               Next
             </button>
