@@ -1,5 +1,6 @@
 header {
-    height: 100px;
+    height: 14vh;
+    line-height: 10vh;
     background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
     color: #fff;
     position: relative;
@@ -8,60 +9,47 @@ header {
 
 .logo img {
     width: 80px;
-    margin-right: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-right: 30px;
 }
 
-header li {
+header a {
     color: #fff;
-    margin-left: 55px;
-    cursor: pointer;
-    margin-top: 10px;
+    margin-left: 30px;
 }
 
 header i {
-    padding: 30px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
     text-align: center;
     border-radius: 50%;
-    border: 3px solid #f1b204;
-    color: #f1b204;
-    margin-right: 20px;
-    margin-top: 10px;
+    border: 2px solid #fff;
+    margin: 0 10px;
 }
 
 header button {
     border-radius: 10px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
-    padding: 10px;
-    margin-top: 10px;
 }
 
 .toggle {
     display: none;
 }
 
-
-
+.btnbg {
+    background-color: #e50813;
+    color: #fff;
+}
 
 @media only screen and (max-width: 768px) {
     header nav .flexSB {
         display: none;
     }
 
-    .logo img {
-        margin-top: 15px;
-        margin-left: 0.5vh;
-    }
-
     .account {
         display: none;
-    }
-
-    .fa-bars {
-        font-size: 40px;
-        margin-right: 10px;
-        color: #f1b204;
     }
 
     .navMenu-list {
@@ -70,26 +58,24 @@ header button {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #f1b204;
+        background-color: #e50813;
         width: 50%;
         height: 100vh;
         z-index: 9999;
     }
 
     header ul li {
-        align-items: center;
-        margin-top: 80px;
-        padding: 0 20%;
+        align-items: left;
+        margin-top: 30px;
+        padding: 0 50px;
     }
-
-
 
     .toggle {
         display: block;
         position: absolute;
         top: 0;
         bottom: 0;
-        right: 0px;
+        right: 20px;
         margin: auto;
         cursor: pointer;
         background: none;

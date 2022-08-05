@@ -18,8 +18,6 @@ export default function CardDetail() {
     <div className="container">
       <div className="row py-2 justify-content-center">
         <div className="_card py-2">
-
-          
           <div className="_card-thumbnail">
             {movieDetail.poster_path ? (
               <img
@@ -31,7 +29,6 @@ export default function CardDetail() {
               <div className="movie-placeholder text-white">No Image found</div>
             )}
           </div>
-
 
           <div className="_card-body">
             <span className="_card-title">{movieDetail.title}</span>

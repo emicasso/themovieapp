@@ -21,7 +21,7 @@ export default function Card() {
           <Link to={`/movies/${items.id}`}>
             <div className="flip-card">
               <div className="flip-card-inner">
-                <div className="flip-card-front">
+                <div className="flip-card-front border border-white">
                   {items.poster_path ? (
                     <img
                       src={`${POSTER_URL}${items.poster_path}`}
@@ -29,7 +29,9 @@ export default function Card() {
                       className="flip-card-front"
                     />
                   ) : (
-                    <div className="_movie-placeholder">No Image found</div>
+                    <div className="_movie-placeholder text-white">
+                      No Image found
+                    </div>
                   )}
                 </div>
                 <div className="card-img-overlay text-white">

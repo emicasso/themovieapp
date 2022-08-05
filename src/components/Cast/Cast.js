@@ -12,7 +12,7 @@ export default function Cast() {
         <div className="cards">
           <div className="_flip-card mx-auto">
             <div className="_flip-card-inner">
-              <div className="_flip-card-front">
+              <div className="_flip-card-front border border-white">
                 {items.profile_path ? (
                   <img
                     src={`${POSTER_URL}${items.profile_path}`}
@@ -20,7 +20,9 @@ export default function Cast() {
                     className="flip-card-front"
                   />
                 ) : (
-                  <div className="movie-placeholder">No Image found</div>
+                  <div className="movie-placeholder text-white">
+                    No Image found
+                  </div>
                 )}
               </div>
               <div className="card-img-overlay text-white">

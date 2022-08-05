@@ -1,4 +1,6 @@
 import axios from "axios";
+import "./App.css";
+
 import { useCallback } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
