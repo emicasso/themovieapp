@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Slider, Carousel } from "../../components";
+import { Card, Carousel } from "../../components";
 
 export default function Home() {
   return (

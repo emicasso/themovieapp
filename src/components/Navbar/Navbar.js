@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import logo from "./MovieLogo.png";
 import "./Navbar.css";
-// import { useListMovie } from "../../hooks/useListMovie";
 import { useContext } from "react";
 import { AppContext } from "../../App";
 
@@ -15,30 +13,6 @@ export default function Navbar() {
   };
 
   return (
-    // <nav className="navbar">
-    //   <div className="container">
-    //     <a className="navbar-brand" href="/">
-    //       <img src={logo} alt="" width={100} height={100} />
-    //     </a>
-
-    //     <form className="d-flex" onSubmit={handleOnSubmit}>
-    //       <input
-    //         className="form-control me-2 text-white"
-    //         type="search"
-    //         placeholder="🔍 Ingrese nombre"
-    //         aria-label="Search"
-    //         value={searchMovie}
-    //         onChange={(e) => setSearchMovie(e.target.value)}
-    //       />
-    //       <button
-    //         className="btn btn-outline-warning rounded-pill"
-    //         type="submit"
-    //       >
-    //         Buscar
-    //       </button>
-    //     </form>
-    //   </div>
-    // </nav>
     <>
       <header>
         <div className="container flexSB mx-auto">
