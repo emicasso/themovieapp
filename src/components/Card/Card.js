@@ -49,7 +49,7 @@ export default function Card() {
                     <span> {items.vote_average}</span>
                   </span>
                   <small className="card-text">
-                    Estrenado: {items.release_date}
+                    Fecha Estreno: {items.release_date}
                   </small>
                 </div>
               </div>
